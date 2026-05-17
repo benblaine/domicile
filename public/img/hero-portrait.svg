@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1024" preserveAspectRatio="xMidYMid slice">
+  <rect width="1792" height="1024" fill="#E8E1D2"/>
+  <rect x="40" y="40" width="1712" height="944" fill="none" stroke="#8A7F70" stroke-width="2" stroke-dasharray="12 8"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">
+    <text x="896" y="490" font-size="56" fill="#4A4239" letter-spacing="10">HERO PORTRAIT</text>
+    <text x="896" y="550" font-size="24" fill="#8A7F70" letter-spacing="6">1792 × 1024</text>
+    <text x="896" y="592" font-size="18" fill="#8A7F70" letter-spacing="4">/img/hero-portrait.jpg</text>
+  </g>
+</svg>

@@ -1171,6 +1171,75 @@ footer {
   gap: 10px;
 }
 
+/* ---------- figures ---------- */
+
+figure { margin: 0; }
+
+.fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fig figcaption {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 22px;
+  text-align: center;
+}
+
+.fig-hero {
+  width: 100%;
+  background: var(--paper-deep);
+  border-bottom: 1px solid var(--rule);
+}
+
+.fig-hero img {
+  width: 100%;
+  height: clamp(280px, 52vw, 620px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.fig-stilllife {
+  margin-bottom: 80px;
+}
+
+.fig-stilllife img {
+  width: 100%;
+  height: clamp(240px, 42vw, 540px);
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 720px) {
+  .fig-stilllife { margin-bottom: 50px; }
+}
+
+.fig-map-section {
+  background: var(--paper-deep);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 90px 0;
+}
+
+@media (max-width: 720px) {
+  .fig-map-section { padding: 60px 0; }
+}
+
+.fig-map {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.fig-map img {
+  width: 100%;
+  height: auto;
+}
+
 /* ---------- reveal on scroll ---------- */
 
 .reveal {

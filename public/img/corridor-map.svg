@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid slice">
+  <rect width="1024" height="1024" fill="#E8E1D2"/>
+  <rect x="40" y="40" width="944" height="944" fill="none" stroke="#8A7F70" stroke-width="2" stroke-dasharray="12 8"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">
+    <text x="512" y="500" font-size="44" fill="#4A4239" letter-spacing="8">CORRIDOR MAP</text>
+    <text x="512" y="554" font-size="20" fill="#8A7F70" letter-spacing="5">1024 × 1024</text>
+    <text x="512" y="592" font-size="16" fill="#8A7F70" letter-spacing="3">/img/corridor-map.jpg</text>
+  </g>
+</svg>
