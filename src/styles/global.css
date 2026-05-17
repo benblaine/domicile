@@ -742,6 +742,12 @@ input[type="range"]::-moz-range-thumb {
   color: var(--ink-faint);
 }
 
+/* ---------- macro section ---------- */
+
+.macro {
+  background: var(--paper-deep);
+}
+
 /* ---------- regulator section ---------- */
 
 .regulator {
