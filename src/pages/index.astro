@@ -1,0 +1,444 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Domicile — Regulated USD payroll for FX-constrained corridors";
+const description =
+  "The regulated USD payroll rail for foreign companies employing workers in Pakistan, Egypt, and Nigeria. Tax-clean. Locally banked. No permanent-establishment risk.";
+---
+<Base title={title} description={description}>
+  <nav class="top">
+    <div class="inner">
+      <div class="wordmark">Domicile<span class="dot">.</span></div>
+      <div class="nav-meta">
+        <span class="corridors">PK · EG · NG</span>
+        <a href="#book" class="btn btn-ghost">Book a call <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="hero-eyebrow">
+          <div class="dash"></div>
+          <span class="label label-gold">Regulated USD payroll</span>
+        </div>
+
+        <div class="hero-headline-wrap">
+          <h1 class="headline">
+            Pay your team in Lagos the way you pay your team in <em>London.</em>
+          </h1>
+        </div>
+
+        <p class="hero-deck">
+          A fully regulated local-employment rail for foreign companies hiring in FX-constrained corridors. Your worker is paid in dollars, locally, tax-clean. You get one invoice and zero permanent-establishment risk.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#book" class="btn">Book a call <span class="arrow">→</span></a>
+          <a href="#how" class="btn btn-ghost">See how it works</a>
+        </div>
+
+        <div class="hero-footnote">
+          <strong>Operating under</strong> the IT-services export regimes in Pakistan, Egypt, and Nigeria. Not a global EOR. Not a stablecoin product. Not a workaround.
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="authority">
+    <div class="wrap authority-inner">
+      <span class="authority-label">Authorised under</span>
+      <div class="authority-list">
+        <div class="authority-item">
+          Pakistan Software Export Board
+          <span class="country">PK · PSEB</span>
+        </div>
+        <div class="authority-item">
+          Information Technology Industry Development Agency
+          <span class="country">EG · ITIDA</span>
+        </div>
+        <div class="authority-item">
+          Nigeria Export Processing Zones Authority
+          <span class="country">NG · NEPZA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="problem">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-num">01 / The Problem</span>
+        <h2 class="section-title">Your contractor in Lagos earns <em>five thousand dollars.</em> She receives roughly <em>thirty-eight hundred.</em></h2>
+      </div>
+      <div class="problem-grid">
+        <span class="label">A short essay</span>
+        <div class="problem-body">
+          <p>The foreign employer believes she has hired a senior developer at senior-developer rates. The developer believes she is being paid mid-level wages. Both are correct. The gap is the <span class="accent">parallel-market FX spread</span>, the conversion loss, the unbanked dollar haircut, the invisible tax on cross-border work that nobody quotes in the offer letter.</p>
+          <p>The existing options compound the problem rather than solve it. Contractor payroll platforms route dollars to a digital wallet that the worker then converts informally, losing fifteen to thirty per cent at the curb. Crypto rails introduce volatility, custody risk, and an off-ramp problem that ends in the same parallel market. Wise lands the funds cleanly but at an official rate the worker cannot actually access at the bank counter.</p>
+          <p>Meanwhile the host government collects <strong>nothing.</strong> No PAYE. No income tax. No social security contribution. A flow that should fund schools and infrastructure is being routed past the revenue service entirely. The foreign employer carries permanent-establishment exposure she does not understand. The worker carries an undocumented income stream that cannot be used as proof of earnings for a mortgage, a visa, or a credit application.</p>
+          <p><span class="accent">Three losers, no winners.</span> This is the status quo we are replacing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="calculator">
+    <div class="calc-inner">
+      <div class="calc-head">
+        <h2 class="calc-title">Calculate the <em>leakage</em></h2>
+        <span class="calc-label-dark">Interactive · Drag to model</span>
+      </div>
+
+      <div class="calc-grid">
+        <div>
+          <div class="calc-control">
+            <div class="calc-control-label">
+              <span class="calc-control-name">Corridor</span>
+            </div>
+            <div class="corridor-tabs">
+              <button class="corridor-tab" data-corridor="pk">Pakistan</button>
+              <button class="corridor-tab active" data-corridor="ng">Nigeria</button>
+              <button class="corridor-tab" data-corridor="eg">Egypt</button>
+            </div>
+          </div>
+
+          <div class="calc-control">
+            <div class="calc-control-label">
+              <span class="calc-control-name">Monthly gross USD per worker</span>
+              <span class="calc-control-value" id="salary-val">$5,000</span>
+            </div>
+            <input type="range" id="salary" min="1000" max="15000" step="250" value="5000" />
+          </div>
+
+          <div class="calc-control">
+            <div class="calc-control-label">
+              <span class="calc-control-name">Number of workers in corridor</span>
+              <span class="calc-control-value" id="count-val">8</span>
+            </div>
+            <input type="range" id="count" min="1" max="40" step="1" value="8" />
+          </div>
+
+          <div class="calc-footnote">
+            Parallel-market premium estimates reflect mid-2024 to early-2026 averages and vary with currency conditions. Figures are illustrative.<sup>¹</sup>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <div class="result-row">
+            <span class="result-label">You pay</span>
+            <span class="result-value" id="r-gross">$40,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Worker receives (status quo)</span>
+            <span class="result-value shrink" id="r-status">$29,600</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Worker receives (Domicile)</span>
+            <span class="result-value" id="r-domicile">$38,800</span>
+          </div>
+          <div class="result-row headline">
+            <span class="result-label">Annual value recovered</span>
+            <span class="result-value delta" id="r-delta">+$110,400</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-num">02 / Mechanism</span>
+        <h2 class="section-title">Four moves. One invoice. <em>No surprises.</em></h2>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="flow">
+        <div class="flow-step">
+          <span class="flow-num">Step 01</span>
+          <span class="flow-numeral">I</span>
+          <h3>Foreign employer remits USD</h3>
+          <p>One consolidated invoice. SWIFT or domestic ACH into our regulated corridor entity. Same workflow as paying any vendor.</p>
+          <div class="meta">SWIFT · ACH · SEPA</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">Step 02</span>
+          <span class="flow-numeral">II</span>
+          <h3>Funds land in worker's local USD account</h3>
+          <p>A domestic, regulated foreign-currency retention account in the worker's name. The dollars are onshore, KYC-cleared, and theirs.</p>
+          <div class="meta">Roshan · Domiciliary · Resident FCA</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">Step 03</span>
+          <span class="flow-numeral">III</span>
+          <h3>Income tax remitted automatically</h3>
+          <p>PAYE or equivalent paid to the revenue service in local currency at the official rate, on the day of payroll. Real-time receipt. Zero employer reconciliation.</p>
+          <div class="meta">FIRS · ETA · FBR</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">Step 04</span>
+          <span class="flow-numeral">IV</span>
+          <h3>Worker spends, holds, or converts</h3>
+          <p>USD debit card for global spend. Hold in dollars. Convert at the official rate plus a thin spread when needed. No more curb visits.</p>
+          <div class="meta">Mastercard · Local rails</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="regulator">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-num">03 / Infrastructure</span>
+        <h2 class="section-title">We do not invent a regime. We <em>operationalise</em> one.</h2>
+      </div>
+      <div class="regulator-grid">
+        <div>
+          <p class="regulator-lede">
+            Pakistan, Egypt, and Nigeria each have a sophisticated <em>IT-services export regime</em> on the books. The frameworks were designed for exactly this flow. They go under-utilised because compliance overhead is prohibitive for any employer with fewer than two hundred workers in-country.
+          </p>
+          <p class="regulator-lede" style="margin-top: 24px;">
+            Domicile is the operating layer. Licensed, audited, integrated with the revenue authority, and built specifically to serve the long tail of foreign employers the existing regimes never reached.
+          </p>
+        </div>
+        <ul class="regulator-checklist">
+          <li>
+            <span class="check-mark">▸</span>
+            <div class="check-content">
+              <h4>Real-time tax remittance dashboard</h4>
+              <p>Revenue authorities see every USD inflow, every local-currency tax payment, every worker. Full audit trail. No reconciliation lag.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-mark">▸</span>
+            <div class="check-content">
+              <h4>KYC, AML, and sanctions screening at source</h4>
+              <p>Every worker onboarded to local financial-institution standards. Every employer screened to FATF and OFAC. Quarterly third-party audit.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-mark">▸</span>
+            <div class="check-content">
+              <h4>Onshore USD custody</h4>
+              <p>Funds land in regulated domestic FX accounts at tier-one local banks. No offshore wallets. No crypto. No bearer instruments.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-mark">▸</span>
+            <div class="check-content">
+              <h4>Permanent-establishment shield</h4>
+              <p>The foreign employer engages a local entity, not a local individual. Misclassification risk drops to zero. Local labour law obligations are ours.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-num">04 / Pricing</span>
+        <h2 class="section-title">Per worker. Per month. <em>No percentage of payroll.</em></h2>
+      </div>
+
+      <div class="pricing-table">
+        <div class="pricing-row head">
+          <div class="cell">Product</div>
+          <div class="cell">Domicile</div>
+          <div class="cell">Deel / Remote</div>
+          <div class="cell">Wise + parallel</div>
+        </div>
+        <div class="pricing-row featured">
+          <div class="cell product">
+            Per-worker subscription
+            <span class="sub">Includes payroll, tax remittance, USD card, compliance</span>
+          </div>
+          <div class="cell price">$295<span class="per">/mo</span></div>
+          <div class="cell price">$599<span class="per">/mo</span></div>
+          <div class="cell price">—</div>
+        </div>
+        <div class="pricing-row">
+          <div class="cell product">FX conversion (worker, optional)</div>
+          <div class="cell price">Official + 0.4%</div>
+          <div class="cell price">Mid + 1.5%</div>
+          <div class="cell price">Parallel · 15–30%</div>
+        </div>
+        <div class="pricing-row">
+          <div class="cell product">Permanent establishment risk</div>
+          <div class="cell price">Eliminated</div>
+          <div class="cell price">Eliminated</div>
+          <div class="cell price">Carried by employer</div>
+        </div>
+        <div class="pricing-row">
+          <div class="cell product">Local tax compliance</div>
+          <div class="cell price">Automatic</div>
+          <div class="cell price">Automatic</div>
+          <div class="cell price">Not collected</div>
+        </div>
+        <div class="pricing-row">
+          <div class="cell product">Worker proof of income</div>
+          <div class="cell price">Issued</div>
+          <div class="cell price">Issued</div>
+          <div class="cell price">None</div>
+        </div>
+      </div>
+
+      <p class="pricing-foot">
+        Pricing is per worker per month, billed monthly in USD. Volume rates available above 25 workers per corridor. No setup fee.
+      </p>
+    </div>
+  </section>
+
+  <section class="notfor">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-num">05 / Honesty</span>
+        <h2 class="section-title">We are not <em>for everyone.</em></h2>
+      </div>
+      <div class="notfor-grid">
+        <div class="notfor-col left">
+          <h3>You will love this product if</h3>
+          <ul class="notfor-list">
+            <li><span class="mark">+</span><span>You employ between one and forty workers in Pakistan, Egypt, or Nigeria today.</span></li>
+            <li><span class="mark">+</span><span>You have been calling them contractors because the alternative was opening a local entity.</span></li>
+            <li><span class="mark">+</span><span>You want your team paid properly without becoming an expert in three foreign labour codes.</span></li>
+            <li><span class="mark">+</span><span>You have a CFO or General Counsel who has flagged permanent-establishment risk and you have ignored them.</span></li>
+            <li><span class="mark">+</span><span>You believe paying tax in the country where the work happens is the right answer.</span></li>
+          </ul>
+        </div>
+        <div class="notfor-col right">
+          <h3>Look elsewhere if</h3>
+          <ul class="notfor-list">
+            <li><span class="mark">−</span><span>You hire across thirty countries and need a single global EOR. Use Deel or Remote.</span></li>
+            <li><span class="mark">−</span><span>You are looking for a stablecoin or crypto payroll rail. Use Bitwage or Request Finance.</span></li>
+            <li><span class="mark">−</span><span>You want to keep the parallel-market spread as a hidden cost discount. We close that gap by design.</span></li>
+            <li><span class="mark">−</span><span>You need coverage in markets we have not yet entered. Argentina, Bangladesh, and Vietnam are on the roadmap.</span></li>
+            <li><span class="mark">−</span><span>You consider tax optimisation a feature. We are the opposite.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="book">
+    <div class="closing-inner">
+      <h2>Talk to us about <em>your team.</em></h2>
+      <p>A thirty-minute call. Bring the list of workers, the gross USD you are paying today, and the country. We will tell you within the call whether we can help, what it will cost, and what changes for the worker.</p>
+      <a href="mailto:hello@domicile.example" class="btn">Book a call <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="wordmark">Domicile<span class="dot">.</span></div>
+          <p>Regulated USD payroll for foreign companies employing workers in FX-constrained corridors.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#book">Book a call</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Corridors</h5>
+          <ul>
+            <li>Pakistan · PK</li>
+            <li>Egypt · EG</li>
+            <li>Nigeria · NG</li>
+            <li style="color: var(--ink-faint)">Argentina · Q3 2026</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Regulatory</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footnotes">
+        <p>¹ Parallel-market premium estimates: Pakistan PKR illustrative range 5–12%, Egypt EGP illustrative range 0–35% post-March 2024 devaluation, Nigeria NGN illustrative range 15–30% post-unification reopening. Figures are mid-period averages and not guarantees of present-day spreads.</p>
+        <p>² Domicile operates as a regulated entity in each corridor under the relevant IT-services export regime. Licences and authorisations are listed in the Regulatory section.</p>
+        <p>³ Pricing is indicative for the standard product. Enterprise volume agreements and bespoke arrangements available on request.</p>
+      </div>
+
+      <div class="footer-end">
+        <div>© 2026 Domicile Corridor Services.</div>
+        <div>Karachi · Cairo · Lagos · London</div>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    // ----- corridor data -----
+    const corridors = {
+      pk: { name: "Pakistan", premium: 0.08, label: "PKR" },
+      ng: { name: "Nigeria", premium: 0.24, label: "NGN" },
+      eg: { name: "Egypt", premium: 0.18, label: "EGP" }
+    };
+
+    const domicileRecoveryFactor = 0.97;
+    let activeCorridor = "ng";
+
+    const fmt = n => "$" + Math.round(n).toLocaleString("en-US");
+
+    function recalc() {
+      const salary = parseInt(document.getElementById("salary").value, 10);
+      const count = parseInt(document.getElementById("count").value, 10);
+      const c = corridors[activeCorridor];
+
+      const gross = salary * count;
+      const status = gross * (1 - c.premium);
+      const dom = gross * domicileRecoveryFactor;
+      const annualDelta = (dom - status) * 12;
+
+      document.getElementById("salary-val").textContent = "$" + salary.toLocaleString("en-US");
+      document.getElementById("count-val").textContent = count;
+      document.getElementById("r-gross").textContent = fmt(gross);
+      document.getElementById("r-status").textContent = fmt(status);
+      document.getElementById("r-domicile").textContent = fmt(dom);
+      document.getElementById("r-delta").textContent = "+" + fmt(annualDelta);
+    }
+
+    document.querySelectorAll(".corridor-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".corridor-tab").forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        activeCorridor = tab.dataset.corridor;
+        recalc();
+      });
+    });
+
+    document.getElementById("salary").addEventListener("input", recalc);
+    document.getElementById("count").addEventListener("input", recalc);
+
+    recalc();
+
+    // ----- reveal on scroll -----
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll("section, .authority, .calculator").forEach(el => {
+      el.classList.add("reveal");
+      io.observe(el);
+    });
+  </script>
+</Base>
